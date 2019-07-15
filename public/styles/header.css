@@ -1,0 +1,17 @@
+header {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #d3def0;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-v2.png");
+}
+
+h2 {
+  margin: 0;
+}
+
+/* avatar centered horizontally and vertically */
+/* name centered below avatar */
+/* background image trasparent */

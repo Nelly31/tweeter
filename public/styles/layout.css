@@ -15,11 +15,17 @@ html {
  */
 
 body {
-  font-family: 'Source Sans Pro', sans-serif; 
+  font-family: 'Source Sans Pro', sans-serif;
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: white;
   font-size: 24px;
   margin-top: 120px;
+}
+
+main {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /*

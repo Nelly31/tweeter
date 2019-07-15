@@ -13,6 +13,12 @@
     <!-- Nav CSS -->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+    <!-- New tweet CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -31,19 +37,25 @@
       <span>tweeter</span>
     </nav>
 
+    <header>
+      <div >
+        <img src="/images/profile-hex.png">
+      </div>
+      <div>
+        <h2>Nelly Main</h2>
+      </div>
+    </header>
+
     <!-- Page-specific (main) content here -->
     <main class="container">
-
-        <div>Bacon ipsum dolor amet short loin bacon swine filet mignon brisket, pastrami capicola meatloaf tail cow. Shankle fatback brisket strip steak meatloaf tail ham short ribs andouille short loin kevin. Strip steak tri-tip cupim, rump pork chop turducken sirloin beef pastrami picanha alcatra kevin burgdoggen. Jerky burgdoggen shoulder, turducken beef ribs hamburger shankle venison beef landjaeger pancetta swine ground round meatloaf spare ribs. Biltong pork chop sirloin jowl, turducken spare ribs beef flank shank pancetta andouille bacon. Biltong buffalo jowl beef pork, jerky fatback.
-
-        Cow jerky chicken pork belly. Fatback venison brisket pancetta. Frankfurter sirloin short ribs meatball. Turducken corned beef swine, tongue ball tip tenderloin leberkas bresaola cow drumstick alcatra porchetta strip steak landjaeger. Venison frankfurter kevin sirloin ball tip beef.
-        
-        Leberkas pork loin fatback tenderloin bresaola frankfurter strip steak kevin drumstick tongue jowl hamburger. Salami andouille beef kielbasa. Tail kielbasa spare ribs, picanha brisket buffalo swine filet mignon andouille ham landjaeger fatback. Capicola shankle jowl, pork spare ribs kielbasa frankfurter burgdoggen ham ribeye boudin. Capicola brisket pork belly meatloaf, andouille shoulder cupim hamburger pork ribeye venison ground round biltong chuck drumstick. Shank brisket turducken cow sirloin t-bone beef ribs, burgdoggen andouille filet mignon.
-        
-        Turkey porchetta swine burgdoggen corned beef. Picanha pork belly ham hock, shank prosciutto salami cow. Spare ribs biltong corned beef venison, cupim leberkas burgdoggen flank shankle strip steak ribeye porchetta fatback ham. Tenderloin short loin rump, kevin chicken beef ribs pork ham hock burgdoggen.
-        
-        Buffalo jerky tenderloin chuck capicola spare ribs swine. Beef ribs cow meatball tail. Porchetta pancetta cupim, alcatra prosciutto tongue sausage turducken biltong tail turkey shankle ham hock chuck. Pork chop hamburger shank kevin, spare ribs jerky tail ground round landjaeger pork loin bacon burgdoggen. Ball tip ham hock tenderloin, andouille prosciutto ribeye frankfurter pancetta. Fatback salami t-bone brisket jerky burgdoggen tail venison short loin bresaola. Hamburger frankfurter tenderloin pastrami drumstick t-bone ham tail meatball sausage pork belly spare ribs cupim pancetta.</div>
-                
+        <section class="new-tweet">
+            <h2>Compose Tweet</h2>
+            <form action="/tweets/" method="post">
+              <textarea name="text" placeholder="What are you humming about?"></textarea>
+              <input type="submit" value="Tweet">
+              <span class="counter">140</span>
+            </form>
+          </section>       
     </main>
 
   </body>
