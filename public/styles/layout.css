@@ -17,13 +17,12 @@ html {
 body {
   font-family: 'Source Sans Pro', sans-serif;
   color: #545149;
-  background-color: white;
+  background-color: #fefff7;
   font-size: 24px;
   margin-top: 120px;
 }
 
 main {
-  display: flex;
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;

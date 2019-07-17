@@ -1,4 +1,4 @@
-header {
+body > header {
   height: 400px;
   display: flex;
   justify-content: center;
@@ -12,6 +12,3 @@ header h2 {
   margin: 0;
 }
 
-/* avatar centered horizontally and vertically */
-/* name centered below avatar */
-/* background image trasparent */
