@@ -1,4 +1,6 @@
 nav {
+  display: flex;
+  display: inline;
   font-family: 'Bungee', cursive;
   background-color: #4056A1;
   color: #ffffff;
@@ -12,3 +14,22 @@ nav {
 
 /* 1.5ems away from all edges */
 
+nav button {
+  float: right;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 5px 5px;
+  background-color: #4056A1;
+  color: #ffffff;
+  border-color: #4056A1;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.80;
+  outline: none;
+}
+
+button:hover {
+  opacity: 1;
+  font-weight: bolder;
+  border: none;
+  outline: none;
+}

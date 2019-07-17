@@ -94,8 +94,14 @@ $(document).ready(function() {
 $(document).ready(() => {
   
   loadTweets();
-
+  expand();
 });
 
+//expand textarea
+const expand = () => {
+  $('nav button').click(function() {
 
-
+    $('.new-tweet form').toggle();
+  
+  });
+};

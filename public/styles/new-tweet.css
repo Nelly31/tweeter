@@ -23,13 +23,12 @@ textarea {
   background-color: #fefff7;
   resize: none;
   width: 100%;
-  height: 80px;
   margin-top: 30px;
   margin-bottom: 10px;
   align-self: center;
   border-bottom: 2px solid #4D4E4F;
   outline: none;
-  /* JQUERY TO RESIZE WITH TEXT INPUT $('textarea').autoResize(); */
+  height: 100px;
 }
 
 #overCharLimit {
