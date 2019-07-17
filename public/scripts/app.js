@@ -4,32 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
-const createTweetElement = function(tweetObj) {
+const createTweetElement = (tweetObj) => {
 
   // add all the tags
 
@@ -64,7 +39,7 @@ const createTweetElement = function(tweetObj) {
 };
 
 //rendering the tweets from hard copy data
-const renderTweets = function(allTweetObj) {
+const renderTweets = (allTweetObj) => {
 
   for (const oneTweetObj of allTweetObj) {
     const $tweet = createTweetElement(oneTweetObj)
@@ -73,10 +48,26 @@ const renderTweets = function(allTweetObj) {
 
 };
 
+// requesting tweets from localhost8080/tweets
+const loadTweets = () => {
+  $.ajax({
+    method: 'GET',
+    url: 'http://localhost:8080/tweets'
+  })
+    .then(function(data) {
+      renderTweets(data);
+      console.log(data);
+    })
+    .fail(error => console.log(error));
+};
+
+
 //checking the page is loaded before calling the function
-$(document).ready(function() {
+$(document).ready(() => {
   
-  renderTweets(tweetData);
+  loadTweets();
 
 });
+
+
 
