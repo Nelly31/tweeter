@@ -55,7 +55,18 @@ const loadTweets = () => {
   })
     .then(function(data) {
       renderTweets(data);
-      console.log(data);
+    })
+    .fail(error => console.log(error));
+};
+
+// requesting tweets from localhost8080/tweets
+const loadNewTweets = () => {
+  $.ajax({
+    method: 'GET',
+    url: 'http://localhost:8080/tweets'
+  })
+    .then(function(data) {
+      renderTweets([data[data.length-1]]);
     })
     .fail(error => console.log(error));
 };
@@ -63,19 +74,24 @@ const loadTweets = () => {
 //new tweet submission
 $(document).ready(function() {
 
+  loadTweets();
+  expand();
+  $('.new-tweet form').hide();
+  $('#errorTooShort').hide();
+  $('#errorTooLong').hide();
+
   $('.new-tweet form').on("submit", function(event) {
     event.preventDefault();
 
     let outPut = $(this).serialize();
+    console.log(outPut);
 
     let textArea = $('.new-tweet form textarea').val();
 
     if (textArea === "") {
-      console.log(textArea)
       $('#errorTooLong').hide();
       $('#errorTooShort').slideDown();
     } else if (textArea.length > 140) {
-      console.log(textArea)
       $('#errorTooShort').hide();
       $('#errorTooLong').slideDown();
     } else {
@@ -86,7 +102,7 @@ $(document).ready(function() {
         url: '/tweets',
         data: $(this).serialize()
       })
-        .then((event) => loadTweets(outPut))
+        .then((event) => loadNewTweets())
         .then((event) => {
           $('.new-tweet form textarea').val('');
           $('.new-tweet form .counter').text('140');
@@ -96,16 +112,16 @@ $(document).ready(function() {
   });
 });
 
-//checking the page is loaded before calling the function
-$(document).ready(() => {
+// //checking the page is loaded before calling the function
+// $(document).ready(() => {
   
-  loadTweets();
-  expand();
-  $('.new-tweet form').hide();
-  $('#errorTooShort').hide();
-  $('#errorTooLong').hide();
+//   loadTweets();
+//   expand();
+//   $('.new-tweet form').hide();
+//   $('#errorTooShort').hide();
+//   $('#errorTooLong').hide();
 
-});
+// });
 
 //expand textarea
 const expand = () => {
