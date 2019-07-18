@@ -1,3 +1,5 @@
+//tweet length counter
+
 const charCounter = function() {
   $('textarea[name = text]').keydown(function() {
     let count = 140 - ($(this).val().length);

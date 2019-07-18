@@ -1,8 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 
 const createTweetElement = (tweetObj) => {
 
@@ -21,15 +16,16 @@ const createTweetElement = (tweetObj) => {
   const $date = $('<span>');
   const $icon = $('<span>');
 
-  // add the class/id
+  // add the class
 
   $icon.addClass('icons');
+  
   // add the content
 
   $name.text(tweetObj['user'].name);
   $handle.text(tweetObj['user'].handle);
   $content.text(tweetObj['content'].text);
-  $date.text(tweetObj.created_at);
+  $date.text(new Date(tweetObj.created_at));
   $icon.text('☞ ✓ ✩');
 
   //connect them together
@@ -42,7 +38,7 @@ const createTweetElement = (tweetObj) => {
   return $postContainer;
 };
 
-//rendering the tweets 
+//rendering the tweets
 const renderTweets = (allTweetObj) => {
 
   for (const oneTweetObj of allTweetObj) {
@@ -63,7 +59,7 @@ const loadTweets = () => {
     .fail(error => console.log(error));
 };
 
-// requesting tweets from localhost8080/tweets
+// requesting the last tweet
 const loadNewTweets = () => {
   $.ajax({
     method: 'GET',
@@ -84,7 +80,7 @@ const expand = () => {
   });
 };
 
-//new tweet submission
+//page load and new tweet submission
 $(document).ready(function() {
 
   loadTweets();
