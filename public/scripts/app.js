@@ -12,7 +12,6 @@ const createTweetElement = (tweetObj) => {
   const $header = $('<header>');
 
   const $nameAndAvatarDiv = $('<div>');
-  // const $avatar = $('<img>');
   const $name = $('<span>');
   const $handle = $('<span>');
 
@@ -20,19 +19,24 @@ const createTweetElement = (tweetObj) => {
 
   const $footer = $('<footer>');
   const $date = $('<span>');
+  const $icon = $('<span>');
 
+  // add the class/id
+
+  $icon.addClass('icons');
   // add the content
 
   $name.text(tweetObj['user'].name);
   $handle.text(tweetObj['user'].handle);
   $content.text(tweetObj['content'].text);
   $date.text(tweetObj.created_at);
+  $icon.text('☞ ✓ ✩');
 
   //connect them together
 
   $nameAndAvatarDiv.append(`<img src=${tweetObj['user'].avatars}.>`).append($name);
   $header.append($nameAndAvatarDiv).append($handle);
-  $footer.append($date);
+  $footer.append($date).append($icon);
   $postContainer.append($header).append($content).append($footer);
 
   return $postContainer;
@@ -42,7 +46,7 @@ const createTweetElement = (tweetObj) => {
 const renderTweets = (allTweetObj) => {
 
   for (const oneTweetObj of allTweetObj) {
-    const $tweet = createTweetElement(oneTweetObj)
+    const $tweet = createTweetElement(oneTweetObj);
     $('#tweet-container').prepend($tweet);
   }
 };
@@ -71,6 +75,15 @@ const loadNewTweets = () => {
     .fail(error => console.log(error));
 };
 
+//expand textarea
+const expand = () => {
+  $('nav button').click(function() {
+
+    $('.new-tweet form').toggle();
+  
+  });
+};
+
 //new tweet submission
 $(document).ready(function() {
 
@@ -84,7 +97,6 @@ $(document).ready(function() {
     event.preventDefault();
 
     let outPut = $(this).serialize();
-    console.log(outPut);
 
     let textArea = $('.new-tweet form textarea').val();
 
@@ -111,23 +123,3 @@ $(document).ready(function() {
     }
   });
 });
-
-// //checking the page is loaded before calling the function
-// $(document).ready(() => {
-  
-//   loadTweets();
-//   expand();
-//   $('.new-tweet form').hide();
-//   $('#errorTooShort').hide();
-//   $('#errorTooLong').hide();
-
-// });
-
-//expand textarea
-const expand = () => {
-  $('nav button').click(function() {
-
-    $('.new-tweet form').toggle();
-  
-  });
-};

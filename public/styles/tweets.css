@@ -4,7 +4,7 @@
   flex-direction: row;
   align-items: center;
   border: 2px solid #4D4E4F;
-  margin-top: 20px;
+  margin-bottom: 5%;
 }
 
 #tweet-container header {
@@ -46,8 +46,10 @@
 }
 
 #tweet-container footer {
+  display: flex;
   flex-direction: row;
   align-content: center;
+  justify-content: space-between;
   height: 30%;
   background-color:#fefff7;
   background-image: none;
@@ -55,6 +57,7 @@
   padding-left: 10px;
   padding-bottom: 10px;
   padding-top: 10px;
+  padding-right: 10px;
   font-size: 0.90rem;
 }
 
@@ -67,7 +70,15 @@
 }
 
 #tweet-container article:hover {
-  font-weight: bolder;
+  text-shadow: 0.5px 0.3px #4D4E4F;
   box-shadow: 5px 5px 5px #4D4E4F;
 }
 
+
+@media (min-width: 1024px) {
+  #tweet-container {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+}

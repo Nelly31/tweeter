@@ -2,7 +2,6 @@ nav {
   display: flex;
   display: inline;
   font-family: 'Bungee', cursive;
-  background-color: #4056A1;
   color: #ffffff;
   position: fixed;
   top: 0;
@@ -18,13 +17,16 @@ nav button {
   float: right;
   font-family: 'Source Sans Pro', sans-serif;
   padding: 5px 5px;
-  background-color: #4056A1;
   color: #ffffff;
-  border-color: #4056A1;
+  background-color: inherit;
   font-size: 1rem;
   cursor: pointer;
-  opacity: 0.80;
   outline: none;
+  border: none;
+}
+
+nav span {
+  font-size: 1.5em;
 }
 
 button:hover {
@@ -32,4 +34,14 @@ button:hover {
   font-weight: bolder;
   border: none;
   outline: none;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+  }
+  nav span {
+    font-size: 2em;
+  }
 }
