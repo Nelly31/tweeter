@@ -3,6 +3,8 @@
   display: flex;
   justify-content: space-between; 
   font-weight: 600;
+  align-items: center;
+  height: 45px;
 }
 
 /* button */
@@ -11,6 +13,28 @@ input {
   color: white;
   text-transform: uppercase;
   border-radius: 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* error */
+
+#errorTooShort {
+  font-size: 1rem;
+  color: red;
+  margin-bottom: 25px;
+  border: solid red;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#errorTooLong {
+  font-size: 1rem;
+  color: red;
+  margin-bottom: 25px;
+  border: solid red;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 section {
@@ -24,7 +48,6 @@ textarea {
   resize: none;
   width: 100%;
   margin-top: 30px;
-  margin-bottom: 10px;
   align-self: center;
   border-bottom: 2px solid #4D4E4F;
   outline: none;

@@ -71,10 +71,16 @@ $(document).ready(function() {
     let textArea = $('.new-tweet form textarea').val();
 
     if (textArea === "") {
-      alert('error - your tweet is empty!');
+      console.log(textArea)
+      $('#errorTooLong').hide();
+      $('#errorTooShort').slideDown();
     } else if (textArea.length > 140) {
-      alert('error - your tweet is too long');
+      console.log(textArea)
+      $('#errorTooShort').hide();
+      $('#errorTooLong').slideDown();
     } else {
+      $('#errorTooShort').hide();
+      $('#errorTooLong').hide();
       $.ajax({
         method: 'POST',
         url: '/tweets',
@@ -95,6 +101,10 @@ $(document).ready(() => {
   
   loadTweets();
   expand();
+  $('.new-tweet form').hide();
+  $('#errorTooShort').hide();
+  $('#errorTooLong').hide();
+
 });
 
 //expand textarea
