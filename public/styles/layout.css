@@ -40,8 +40,6 @@ main {
       display: inline-flex;
       margin-top: 120px;
       width: 100%;
-    }
-    main {
-
+      font: 1.8em;
     }
 }
