@@ -1,8 +1,8 @@
-# Tweeter Project
+## Tweeter Project
 
 Tweeter is a simple, single-page AJX-based Twitter clone that uses jQuery, HTML5 and CSS3. This project was focused on developing front end skills. The basic layout design was provided but the implementation was all mine. 
 
-##Final Product 
+## Final Product Screenshots
 
 ![Screenshot for the large display](https://github.com/Nelly31/tweeter/blob/master/docs/lg-display.png)
 
