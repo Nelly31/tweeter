@@ -22,10 +22,13 @@ const createTweetElement = (tweetObj) => {
   
   // add the content
 
+  let date = Date(tweetObj.created_at);
+  let formattedDate = (date).slice(0, 15);
+
   $name.text(tweetObj['user'].name);
   $handle.text(tweetObj['user'].handle);
   $content.text(tweetObj['content'].text);
-  $date.text(new Date(tweetObj.created_at));
+  $date.text(formattedDate);
   $icon.text('☞ ✓ ✩');
 
   //connect them together

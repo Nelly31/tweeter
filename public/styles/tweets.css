@@ -19,6 +19,7 @@
   background-color:#fefff7;
   background-image: none;
   margin-top: 10px;
+  border-radius: 7px;
 }
 
 #tweet-container header img {
@@ -59,6 +60,7 @@
   padding-top: 10px;
   padding-right: 10px;
   font-size: 0.90rem;
+  border-radius: 7px;
 }
 
 #tweet-container footer img {
@@ -73,7 +75,6 @@
   text-shadow: 0.5px 0.3px #4D4E4F;
   box-shadow: 5px 5px 5px #4D4E4F;
 }
-
 
 @media (min-width: 1024px) {
   #tweet-container {
